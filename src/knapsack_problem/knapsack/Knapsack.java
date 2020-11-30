@@ -4,11 +4,11 @@ import knapsack_problem.provision.Provision;
 
 import java.util.ArrayList;
 
+// This class represents the state of the knapsack
 public class Knapsack {
     private ArrayList<Item> contents = new ArrayList<Item>();
     private int capacity;
-    private double totalProfit;
-    private double totalWeight;
+    private double totalProfit = 0;
 
     public Knapsack() {
 
@@ -57,10 +57,12 @@ public class Knapsack {
         return capacity;
     }
 
-    // amount is 0 <= amount <= 1 for the percentage of the total item quantity
-    public void addItem(Provision p, double amount) {
-        Item new_item = new Item(p.getProfit() * amount, p.getWeight() * amount);
+    // amountIncluded is 0 <= amountIncluded <= 1 for the percentage of the total item quantity
+    public void addItem(Provision p, double amountIncluded) {
+        Item new_item = new Item(p.getProfit() * amountIncluded, p.getWeight() * amountIncluded);
         contents.add(new_item);
+
+        this.totalProfit += new_item.getProfit();
     }
 
     public String seeContents() {
@@ -76,17 +78,7 @@ public class Knapsack {
     }
 
     public double getTotalProfit() {
-        for(int i = 0; i < contents.size(); i++) {
-            totalProfit += contents.get(i).getProfit();
-        }
         return totalProfit;
-    }
-
-    public double getTotalWeight() {
-        for(int i = 0; i < contents.size(); i++) {
-            totalWeight += contents.get(i).getWeight();
-        }
-        return totalWeight;
     }
 
     public String toString() {

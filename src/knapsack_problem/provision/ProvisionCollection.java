@@ -3,6 +3,9 @@ package knapsack_problem.provision;
 import java.util.ArrayList;
 import java.util.Random;
 
+
+// This class acts as the list of candidate objects for inclusion within the knapsack
+// These objects, called Provisions, are generated with random values, up to an arbitrary max
 public class ProvisionCollection {
     public ArrayList<Provision> provisions = new ArrayList<Provision>();
     private int size;
@@ -27,8 +30,8 @@ public class ProvisionCollection {
         Random number_generator = new Random();
         Provision new_provision = new Provision();
 
-        new_provision.setProfit(number_generator.nextInt(Provision.MAX_PROFIT));
-        new_provision.setWeight(number_generator.nextInt(Provision.MAX_WEIGHT));
+        new_provision.setProfit(number_generator.nextInt(Provision.MAX_PROFIT) + 1);
+        new_provision.setWeight(number_generator.nextInt(Provision.MAX_WEIGHT) + 1);
 
         return new_provision;
     }

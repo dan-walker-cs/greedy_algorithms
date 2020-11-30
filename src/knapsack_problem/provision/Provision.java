@@ -1,9 +1,10 @@
 package knapsack_problem.provision;
 
+// This class is the blueprint for an object to potentially be included within the knapsack
 public class Provision {
     // arbitrarily selected bounds
-    final static int MAX_PROFIT = 50;
-    final static int MAX_WEIGHT = 20;
+    final static int MAX_PROFIT = 49;
+    final static int MAX_WEIGHT = 19;
 
     private int profit;
     private int weight;

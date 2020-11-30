@@ -133,8 +133,8 @@ public class tests {
     }
 
     @Test
-    @DisplayName("Tests getTotalProfit().")
-    void testTotalProfit() {
+    @DisplayName("mytest")
+    void testmytest() {
         test_k = new Knapsack(10);
         test_p = new Provision(1, 1);
 
@@ -142,19 +142,8 @@ public class tests {
             test_k.addItem(test_p, 1);
         }
 
-        Assertions.assertEquals(10, test_k.getTotalProfit());
+
     }
 
-    @Test
-    @DisplayName("Tests getTotalWeight().")
-    void testTotalWeight() {
-        test_k = new Knapsack(10);
-        test_p = new Provision(1, 1);
 
-        for(int i = 0; i < test_k.getCapacity(); i++) {
-            test_k.addItem(test_p, 1);
-        }
-
-        Assertions.assertEquals(10, test_k.getTotalWeight());
-    }
 }
